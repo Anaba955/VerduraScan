@@ -3,22 +3,7 @@ import tensorflow as tf
 import numpy as np
 from disease_info import plant_diseases_info
 import requests
-class_name = [
-                'Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy',
-                'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 
-                'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 
-                'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 
-                'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 
-                'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot',
-                'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 
-                'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 
-                'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 
-                'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 
-                'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 
-                'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 
-                'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus',
-                'Tomato___healthy'
-            ]
+
 # tensorflow model prediction
 def model_prediction(test_image):
     model = tf.keras.models.load_model('trained_model.keras')
@@ -150,42 +135,3 @@ elif app_mode == "Disease Recognition":
 
     else:
         st.info("Please upload an image to begin.")
-
-
-
-# Weather data integration
-# api_key = '1b270cb5fbccb5332d86ec8f4e997a2e'
-# city_name = 'Hyderabad'
-# state_code = 'TS'
-# country_code = '+91'
-# url  = f'http://api.openweathermap.org/geo/1.0/direct?q={city_name}&appid={api_key}'
-# print(url)
-
-# response = requests.get(url)
-# print(response)
-# weather_data = response.json()
-# if response.status_code == 200:
-#     weather_data = response.json()
-#     if weather_data:
-#         lat = weather_data[0]['lat']
-#         lon = weather_data[0]['lon']
-# base_url = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}'
-# resp = requests.get(base_url)
-# data = resp.json()
-# print(data)
-
-# print(data['main']['temp'])
-# print(class_name[result_index])
-
-
-# def get_recommendation( disease, severity):
-    # Provide recommendations based on disease, severity, and weather data
-    # if disease == 'disease_name' and severity == 'severity_level':
-    #     if weather_data['main']['temp'] > 30:
-    #         return 'Recommendation for hot weather'
-    #     else:
-    #         return 'Recommendation for cold weather'
-    # print(disease)
-    # Add more logic for other diseases and weather conditions
-
-
