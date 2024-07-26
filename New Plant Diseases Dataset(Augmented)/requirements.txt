@@ -1,9 +1,7 @@
-keras==2.15.0
-ml-dtypes==0.2.0
-tensorflow==2.15.0
-numpy==1.23.1
-matplotlib==3.7.1
-pandas==1.5.3
-seaborn==0.12.2
-scikit-learn==1.2.2
-streamlit==1.37.0
+tensorflow
+numpy
+matplotlib
+pandas
+seaborn
+scikit-learn
+streamlit
