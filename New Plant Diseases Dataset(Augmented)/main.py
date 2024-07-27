@@ -6,7 +6,7 @@ import requests
 
 # tensorflow model prediction
 def model_prediction(test_image):
-    model = tf.keras.models.load_model('trained_model.keras')
+    model = tf.keras.models.load_model('New Plant Diseases Dataset(Augmented)/trained_model.keras')
     image = tf.keras.preprocessing.image.load_img(test_image, target_size=(128, 128))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
     input_arr = np.array([input_arr])  # convert single  img to batch
@@ -40,7 +40,7 @@ app_mode = st.sidebar.selectbox("Select Page", ["Home", "About", "Disease Recogn
 # Home Page
 if app_mode == "Home":
     st.header("PLANT DISEASE RECOGNITION SYSTEM")
-    image_path = "home_page.jpg"
+    image_path = "New Plant Diseases Dataset(Augmented)/home_page.jpg"
     st.image(image_path, width=550)
     
     st.markdown("""
